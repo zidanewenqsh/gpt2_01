@@ -9,7 +9,7 @@ class Attention(nn.Module):
         # self.device = device
         self.isMask = isMask
         super(Attention, self).__init__()
-        self.dk = (embed_dim // head_num) ** 2
+        self.dk = (embed_dim // head_num) ** 0.5
         self.c_atten = nn.Linear(embed_dim, embed_dim * 3)
         self.attn_drop = nn.Dropout(0.1)
         self.resi_drop = nn.Dropout(0.1)
